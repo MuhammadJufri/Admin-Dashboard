@@ -1,12 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 a {
   color: inherit;
 }
+.container {
+  display: grid;
+  grid-template-columns: 260px auto; /* sidebar = w260px header&content wrest space */
+  grid-template-rows: max-content 1fr; /* sidebar = hcontent header&content = fitcontent  */
+  grid-template-areas:
+    "sidebar header"
+    "sidebar content";
+}
 .sidebar-container {
+  grid-area: sidebar;
   background-color: green;
   width: 260px;
   height: 100vh;
@@ -15,33 +26,106 @@ a {
   flex-direction: column;
   gap: 25px;
   color: white;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Gene;
-  font-weight: 500; 
+  font-weight: 500;
 }
-
 .dashboard-title {
   display: flex;
   align-items: center;
   padding: 20px;
   gap: 15px;
 }
-
 .dashboard-title i {
   font-size: 30px;
 }
-
 ul {
   list-style: none;
   padding: 0 25px;
   font-size: 17px;
 }
-
 ul li {
   margin: 5px 0;
   padding: 5px 0;
 }
-
 ul li a {
   text-decoration: none;
   word-spacing: 12px;
+}
+header {
+  position: relative;
+  grid-area: header;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+.top-header {
+  padding: 12px 135px 15px 60px;
+  display: grid;
+  grid-template-columns: auto max-content max-content;
+  gap: 35px;
+  align-items: center;
+}
+.search {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+.search input {
+  padding: 8px 15px;
+  width: 87%;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  background-color: rgb(237, 237, 237);
+}
+.search i {
+  font-size: 19px;
+}
+.notification i {
+  font-size: 22px;
+}
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 5px 0;
+}
+.profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.profile-name {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  font-size: 18px;
+}
+.bottom-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 90px 15px 50px;
+}
+.profile-bottom-header img {
+  width: 90px;
+  height: 90px;
+}
+.profile-info h4 {
+  line-height: 1.7rem;
+  font-size: 17px;
+}
+.profile-info h1 {
+  font-size: 30px;
+}
+.button-container {
+  display: flex;
+  gap: 30px;
+}
+.button-container li button {
+  border-radius: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: green;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
 }
